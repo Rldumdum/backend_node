@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const cors = require('cors')
 const blogRoutes = require('./routes/blogRoutes')
 const dotenv = require('dotenv')
 dotenv.config()
@@ -22,6 +23,9 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(cors({
+  origin: ['http://localhost:3000']
+}))
 
 //routes
 app.get("/", (req, res) => {

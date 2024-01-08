@@ -8,11 +8,15 @@
     "morgan": "^1.10.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "install-server": "cd Server && npm install",
+    "start-server": "cd Server && nodemon app.js",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm run start"
   },
   "name": "backend_node",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "author": "",
   "license": "ISC",
   "description": ""
